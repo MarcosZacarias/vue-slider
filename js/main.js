@@ -54,5 +54,16 @@ createApp({
     clickMiniSlide(index) {
       this.imageActive = index;
     },
+
+    // | Funzione Autoplay
+    autoPlay() {
+      setInterval(() => {
+        this.nextSlide();
+      }, 3000);
+    },
+  },
+
+  created() {
+    this.autoPlay();
   },
 }).mount("#app");
