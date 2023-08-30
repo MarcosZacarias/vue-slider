@@ -87,16 +87,22 @@ ul {
 
 /* Control Buttons */
 
-.btn-carousel-prev {
+.btn-controls {
+  padding: 0.2rem;
+  border: 0;
+  border-radius: 50%;
+
   display: inline-block;
   position: absolute;
+
   right: 50%;
-  top: 0;
+  transform: translateX(50%);
 }
 
-.btn-carousel-next {
-  display: inline-block;
-  position: absolute;
-  right: 50%;
-  bottom: 0;
+.btn-controls.btn-prev {
+  top: 2%;
+}
+
+.btn-controls.btn-next {
+  bottom: 2%;
 }
