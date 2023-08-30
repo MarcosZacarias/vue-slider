@@ -32,20 +32,26 @@
     <header></header>
     <main>
       <div id="app" class="container jumbotron">
+        <!-- Slider -->
         <div
           class="container-carousel mt-5 flex-grow-1"
           @:mouseover="stopAutoPlay"
           @:mouseleave="setAutoPlay"
         >
+          <!-- Card -->
           <div id="img-carousel" class="cover-img">
+            <!-- Card Media -->
             <img :src="images[imageActive].image" alt="" />
+            <!-- Card Text -->
             <div class="bottom-carousel">
               <h2>{{ images[imageActive].title }}</h2>
               <p>{{ images[imageActive].text }}</p>
             </div>
           </div>
         </div>
+        <!-- Thumbnails -->
         <div id="img-mini-carousel" class="mini-carousel mt-5">
+          <!-- Mini Slides -->
           <div
             class="mini-slide"
             v-for="(image,index) in images"
@@ -54,7 +60,9 @@
           >
             <img :src="image.image" class="mini-slide-img" alt="" />
           </div>
+          <!-- Controls slider -->
 
+          <!-- Prev Slide -->
           <button
             id="btn-prev"
             class="btn btn-primary btn-carousel-prev"
@@ -62,6 +70,7 @@
           >
             <i class="bi bi-arrow-up-circle-fill"></i>
           </button>
+          <!-- Next Slide -->
           <button
             id="btn-next"
             class="btn btn-primary btn-carousel-next"
