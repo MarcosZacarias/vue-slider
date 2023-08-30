@@ -32,7 +32,11 @@
     <header></header>
     <main>
       <div id="app" class="container jumbotron">
-        <div class="container-carousel mt-5 flex-grow-1">
+        <div
+          class="container-carousel mt-5 flex-grow-1"
+          v-on:mouseover="stopAutoPlay"
+          v-on:mouseleave="setAutoPlay"
+        >
           <div id="img-carousel" class="cover-img">
             <img :src="images[imageActive].image" alt="" />
             <div class="bottom-carousel">

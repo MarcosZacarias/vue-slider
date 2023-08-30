@@ -32,6 +32,7 @@ createApp({
         },
       ],
       imageActive: 0,
+      autoPlay: true,
     };
   },
 
@@ -56,14 +57,22 @@ createApp({
     },
 
     // | Funzione Autoplay
-    autoPlay() {
-      setInterval(() => {
-        this.nextSlide();
-      }, 3000);
+    setAutoPlay() {
+      if (this.autoPlay) {
+        this.autoPlay = setInterval(() => {
+          this.nextSlide();
+        }, 3000);
+      }
+    },
+
+    // | Funzione Stop Autoplay
+    stopAutoPlay() {
+      clearInterval(this.autoPlay);
+      this.autoPlay = true;
     },
   },
 
   created() {
-    this.autoPlay();
+    this.setAutoPlay();
   },
 }).mount("#app");
