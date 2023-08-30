@@ -63,6 +63,10 @@ ul {
   object-fit: cover;
 }
 
+.border-mini-slide {
+  border: 4px solid rgb(237, 236, 245);
+}
+
 .bottom-carousel {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;

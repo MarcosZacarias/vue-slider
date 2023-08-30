@@ -49,5 +49,10 @@ createApp({
         ? (this.imageActive = this.images.length - 1)
         : this.imageActive--;
     },
+
+    // | Funzione Click mini-slide
+    clickMiniSlide(index) {
+      this.imageActive = index;
+    },
   },
 }).mount("#app");

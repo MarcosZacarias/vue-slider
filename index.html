@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titolo</title>
+    <title>Vue Slider</title>
 
     <!-- LINK VUE.JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -42,6 +42,15 @@
           </div>
         </div>
         <div id="img-mini-carousel" class="mini-carousel mt-5">
+          <div
+            class="mini-slide"
+            v-for="(image,index) in images"
+            :class="(index == imageActive) ? `border-mini-slide` : ``"
+            @click="clickMiniSlide(index)"
+          >
+            <img :src="image.image" class="mini-slide-img" alt="" />
+          </div>
+
           <button
             id="btn-prev"
             class="btn btn-primary btn-carousel-prev"
@@ -56,15 +65,7 @@
           >
             <i class="bi bi-arrow-down-circle-fill"></i>
           </button>
-          <div class="mini-slide" v-for="(image,index) in images">
-            <img :src="image.image" class="mini-slide-img" alt="" />
-          </div>
         </div>
-      </div>
-      <div class="container container-btn">
-        <div id="btn-reverse" class="btn btn-primary">Reverse</div>
-        <div id="btn-start" class="btn btn-secondary">Start</div>
-        <div id="btn-stop" class="btn btn-primary">Stop</div>
       </div>
     </main>
     <!-- SCRIPT BOOTSTRAP JAVASCRIPT -->
